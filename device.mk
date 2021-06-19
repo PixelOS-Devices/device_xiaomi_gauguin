@@ -76,6 +76,9 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
+    sound_trigger.primary.lito
+
+PRODUCT_PACKAGES += \
     liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
