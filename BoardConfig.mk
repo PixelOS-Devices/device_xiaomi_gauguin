@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit from proprietary files for miuicamera
+-include vendor/xiaomi/gauguin-miuicamera/products/board.mk
+
 DEVICE_PATH := device/xiaomi/gauguin
 
 # Architecture
