@@ -72,6 +72,10 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_unlock'),
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so': blob_fixup()
         .sig_replace('E7 09 00 94', '1F 20 03 D5'),
+    ('vendor/lib64/hw/camera.qcom.so', 'vendor/lib64/libFaceDetectpp-0.5.2.so', 'vendor/lib64/libfacedet.so'): blob_fixup()
+        .replace_needed('libmegface.so', 'libfacedet.so')
+        .replace_needed('libMegviiFacepp-0.5.2.so', 'libFaceDetectpp-0.5.2.so')
+        .replace_needed('megviifacepp_0_5_2_model', 'facedetectpp_0_5_2_model'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
 }  # fmt: skip
