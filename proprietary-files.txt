@@ -332,9 +332,9 @@ vendor/etc/camera/vidhance_calibration_ov16a1q
 vendor/etc/camera/vidhance_calibration_ov8856
 
 # Camera face detection
-vendor/etc/camera/megviifacepp_0_5_2_model
-vendor/lib64/libmegface.so
-vendor/lib64/libMegviiFacepp-0.5.2.so
+vendor/etc/camera/megviifacepp_0_5_2_model:vendor/etc/camera/facedetectpp_0_5_2_model
+vendor/lib64/libmegface.so:vendor/lib64/libfacedet.so
+vendor/lib64/libMegviiFacepp-0.5.2.so:vendor/lib64/libFaceDetectpp-0.5.2.so
 
 # Camera Features
 vendor/lib64/com.qti.feature2.anchorsync.so
