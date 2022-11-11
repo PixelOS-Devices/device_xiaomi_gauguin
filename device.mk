@@ -414,6 +414,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
+
 # QTI
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
