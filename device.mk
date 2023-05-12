@@ -224,18 +224,19 @@ PRODUCT_PACKAGES += \
     gnss@2.0-xtra-daemon.policy \
     gnss@2.0-xtwifi-client.policy \
     gnss@2.0-xtwifi-inet-agent.policy \
-    gps.conf \
-    flp.conf \
     libbatching \
     libgeofencing \
     libgnss \
     libloc_socket
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/gps/etc/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
-PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
+# GPS configs
+PRODUCT_PACKAGES += \
+    flp.conf \
+    gps.conf \
+    izat.conf
 
 # Health
 PRODUCT_PACKAGES += \
