@@ -14,6 +14,8 @@ $(call inherit-product, device/xiaomi/gauguin/device.mk)
 # Inherit some common PixelOS stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_gauguin
 PRODUCT_DEVICE := gauguin
