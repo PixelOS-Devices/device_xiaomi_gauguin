@@ -25,6 +25,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_PACKAGES += \
     GauguinCarrierConfigOverlay \
+    GauguinRefreshRateOverlay \
     GauguinFrameworksOverlay \
     GauguinSettingsOverlay \
     GauguinSystemUIOverlay \
