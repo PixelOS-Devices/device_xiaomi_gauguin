@@ -224,7 +224,7 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     override
     class early_hal
     user nfc
-    group nfc
+    group nfc drmrpc system
     disabled
 
 on property:init.svc.vendor.per_mgr=running
