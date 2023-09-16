@@ -115,6 +115,8 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <!-- PA: Allow VoLTE and WFC by default -->
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <!-- PA: Use 4G icon for LTE by popular request -->
+        <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
 
     </carrier_config>
 
