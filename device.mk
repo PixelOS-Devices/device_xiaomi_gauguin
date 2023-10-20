@@ -20,10 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
+    GauguinApertureOverlay \
     GauguinCarrierConfigOverlay \
     GauguinRefreshRateOverlay \
     GauguinFrameworksOverlay \
