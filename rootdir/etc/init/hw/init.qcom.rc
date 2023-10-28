@@ -62,20 +62,16 @@ on boot
 
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/alarm 0770 system system
-    mkdir /mnt/vendor/persist/time 0770 system system
 
     setprop wifi.interface wlan0
 
     setprop ro.telephony.call_ring.multiple false
 
-    # Create directory used for display
+    mkdir /mnt/vendor/persist/camera 0755 system cameraserver
     mkdir /mnt/vendor/persist/display 0770 system graphics
-
-    # Create vpp directory
-    mkdir /mnt/vendor/persist/vpp 0770 media media
-
-    # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+    mkdir /mnt/vendor/persist/time 0770 system system
+    mkdir /mnt/vendor/persist/vpp 0770 media media
 
     # Enable qcrild and dataservices (dsds)
     start vendor.qcrild
