@@ -5,18 +5,6 @@ on boot
 on fs
     mkdir /mnt/vendor/persist/camera 0777 root root
 
-    #+ add for watermark
-    chown system system /dev/tfa_reg
-    chown system system /dev/tfa_rw
-    chown system system /dev/tfa_rpc
-    chown system system /dev/tfa_profile
-    chown system system /dev/tfa_control
-    chmod 0660 /dev/tfa_reg
-    chmod 0660 /dev/tfa_rw
-    chmod 0660 /dev/tfa_rpc
-    chmod 0660 /dev/tfa_profile
-    chmod 0660 /dev/tfa_control
-
 #####copy megvii files#####
 on property:sys.boot_completed=1
     mkdir /data/vendor/camera/model 0777 cameraserver audio
