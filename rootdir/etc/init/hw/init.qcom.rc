@@ -52,15 +52,7 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys6/restart_level RELATED
 
 on boot
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
-    chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
-    chmod 0660 /sys/class/rfkill/rfkill0/state
-
     chown system system /sys/kernel/boot_slpi/ssr
-    chown bluetooth net_bt /dev/ttyHS0
-    chmod 0660 /dev/ttyHS0
 
     # This location is used by QCRIL to host UNIX domain
     # socket files used for internal IPC within QCRIL
