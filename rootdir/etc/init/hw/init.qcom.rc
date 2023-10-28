@@ -29,9 +29,6 @@ import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.qcom.power.rc
 
-on init
-    write /sys/kernel/icnss/wpss_boot 1
-
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -40,7 +37,6 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_cdsp/boot 1
     write /sys/devices/virtual/npu/msm_npu/boot 1
-    write /sys/devices/virtual/cvp/cvp/boot 1
 
     # SSR
     write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
