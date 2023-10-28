@@ -166,8 +166,9 @@ on property:vendor.usb.controller=*
 on property:init.svc.vendor.charger=running
     start vendor.power_off_alarm
 
-    setprop vendor.usb.controller a600000.dwc3
+    setprop persist.sys.usb.config mass_storage
     setprop sys.usb.configfs 1
+    setprop vendor.usb.controller a600000.dwc3
     setprop vendor.setup.power 1
 
     # keep one LITTLE and one big
@@ -226,12 +227,6 @@ service vendor.per_proxy /vendor/bin/pm-proxy
     group system
     disabled
 
-on property:init.svc.vendor.per_mgr=running
-    start vendor.per_proxy
-
-on property:sys.shutdown.requested=*
-    stop vendor.per_proxy
-
 # NVMAC
 service nv_mac /vendor/bin/nv_mac
     class late_start
@@ -261,10 +256,20 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc_snxxx@1.2-ser
     group nfc
     disabled
 
+on property:init.svc.vendor.per_mgr=running
+    start vendor.per_proxy
+
+on property:sys.shutdown.requested=*
+    stop vendor.per_proxy
+
+on property:vendor.fastrpc.disable.cdsprpcd.daemon=1
+   stop vendor.cdsprpcd
+
 on property:ro.boot.hwc=GLOBAL
     enable qti_esepowermanager_service_1_1
     enable secureelement-hal_1_2
     enable vendor.nfc_hal_service
+
 on property:ro.boot.hwc=CN
     enable qti_esepowermanager_service_1_1
     enable secureelement-hal_1_2
