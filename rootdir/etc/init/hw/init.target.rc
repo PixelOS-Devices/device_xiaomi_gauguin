@@ -128,21 +128,6 @@ on early-boot
 on boot
     write /dev/cpuset/audio-app/cpus 1-2
 
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/fingerdown_wait
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
-    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/request_vreg
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/irq
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
-    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/request_vreg
-
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
