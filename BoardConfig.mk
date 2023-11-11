@@ -96,7 +96,8 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
 ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_nfc.xml
-ODM_MANIFEST_SKUS += nfc
+ODM_MANIFEST_NO_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_no_nfc.xml
+ODM_MANIFEST_SKUS += nfc no_nfc
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_gauguin
