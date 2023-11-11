@@ -46,6 +46,7 @@ void load_gauguininpro() {
     property_override("ro.product.brand", "Xiaomi");
     property_override("ro.product.device", "gauguininpro");
     property_override("ro.product.model", "M2007J17I");
+    property_override("ro.boot.product.hardware.sku", "no_nfc");
 }
 
 void vendor_load_properties() {
