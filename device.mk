@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
     memtrack.lito
 
 PRODUCT_PACKAGES += \
-    libtinyxml \
     libvulkan
 
 PRODUCT_PACKAGES += \
