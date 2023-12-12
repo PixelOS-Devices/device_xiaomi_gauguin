@@ -333,8 +333,8 @@ vendor/etc/camera/vidhance_calibration_ov8856
 
 # Camera face detection
 vendor/etc/camera/megviifacepp_0_5_2_model:vendor/etc/camera/facedetectpp_0_5_2_model
-vendor/lib64/libmegface.so:vendor/lib64/libfacedet.so
 vendor/lib64/libMegviiFacepp-0.5.2.so:vendor/lib64/libFaceDetectpp-0.5.2.so
+vendor/lib64/libmegface.so:vendor/lib64/libfacedet.so
 
 # Camera Features
 vendor/lib64/com.qti.feature2.anchorsync.so
@@ -492,9 +492,9 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.lito.so
 
 # Display - from FP4
-vendor/lib64/libhdr_tm.so|4be3cfff1ef40cbc6ad329b79c60881263aa6723
 vendor/lib64/libdisplayqos.so|15701f18257c43be5657bbd867a8acf1f469e373
 vendor/lib64/libdisplayskuutils.so|ac4f2231f098c03824844799106685bf81f97782
+vendor/lib64/libhdr_tm.so|4be3cfff1ef40cbc6ad329b79c60881263aa6723
 vendor/lib64/libqseed3.so|c9fb729cf48278d0c87d27c0af17ae3a8ccb1bf7
 vendor/lib64/libsdm-color.so|d4e008d6dfca0b5f9bbf5e3b583f33e2606460e4
 vendor/lib64/libsdm-colormgr-algo.so|1fb7f3cb11557bbf677afb5d6eda0e4e9fd3ac58
@@ -514,9 +514,9 @@ vendor/firmware/NT36xxx_MP_Setting_Criteria_5937.csv
 # Display Postprocessing - from FP4
 vendor/bin/hw/vendor.display.color@1.0-service|1fa47c2d3fff52c362848c59dbc40b4073c59ea9
 vendor/bin/ppd|c478fa8957564bf1b2649b6ba80c07f72b0b318f
-vendor/lib64/libdpps.so|02538edc4f214b3d6018031aa8460efbc1760223
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/lib64/libdisp-aba.so|894b0fe1ace5effb471ebb7437cd590a096e47d8
+vendor/lib64/libdpps.so|02538edc4f214b3d6018031aa8460efbc1760223
 vendor/lib64/vendor.display.color@1.0.so|f1f7d91884c8e3c9ea300e67f5df91057094de40
 vendor/lib64/vendor.display.color@1.1.so|e7ab973147c3e03e31efacee13e8d8a9c841eb7b
 vendor/lib64/vendor.display.color@1.2.so|fe9ec904459b7675297e5ef6883ae98b438fb77f
@@ -612,8 +612,8 @@ system_ext/lib64/fm_helium.so
 system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/bin/fm_qsoc_patches
-vendor/etc/init/init.qti.fm.rc
 vendor/etc/init.qti.fm.sh
+vendor/etc/init/init.qti.fm.rc
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
@@ -627,10 +627,10 @@ vendor/bin/loc_launcher|f0b95b7d523d2785a3090c2598c4bbd6170f1ba1
 vendor/bin/lowi-server|5dac21643422cc9f62aad5c79e0110241948f031
 vendor/bin/xtra-daemon|f9af378bf52e0e177ab9c91c4792c202fa8f25ed
 vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
-vendor/lib64/libcdfw.so|76aa65aea92ef92e0c4e4a6700c049d5de549c18
-vendor/lib64/libcdfw_remote_api.so|e43217af385097ea8d939a7c0cc60c3e092ad086
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so|0f68732435cef39376a7b8db12e676a5f4394a49
 vendor/lib64/libaoa.so|6aacf99d44a05c80bf77ee01ac21da20ce98368d
+vendor/lib64/libcdfw.so|76aa65aea92ef92e0c4e4a6700c049d5de549c18
+vendor/lib64/libcdfw_remote_api.so|e43217af385097ea8d939a7c0cc60c3e092ad086
 vendor/lib64/libdataitems.so|9b344d4f91166cf6c9ccd0acceb5df08c9c4c650
 vendor/lib64/libgdtap.so|500675e4bee26627cda1f1cc87b8a6838f65b7a7
 vendor/lib64/libizat_client_api.so|4a982ffe253557b58934df0e9278f97fef5862f2
