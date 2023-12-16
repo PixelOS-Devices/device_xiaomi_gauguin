@@ -19,41 +19,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 
-# Overlays
-PRODUCT_PACKAGES += \
-    GauguinApertureOverlay \
-    GauguinCarrierConfigOverlay \
-    GauguinRefreshRateOverlay \
-    GauguinFrameworksOverlay \
-    GauguinNfcOverlay \
-    GauguinSettingsOverlay \
-    GauguinSystemUIOverlay \
-    GauguinTelephonyOverlay \
-    GauguinWifiOverlay \
-    SettingsOverlayM2007J17C \
-    SettingsOverlayM2007J17G \
-    SettingsOverlayM2007J17I
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/xiaomi \
-    vendor/qcom/opensource/usb/etc
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
-
-# Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 29
-
-# Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # ANT+
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
@@ -118,6 +83,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
@@ -167,7 +136,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libtinyxml \
-    libvulkan \
+    libvulkan
 
 PRODUCT_PACKAGES += \
     vendor.display.config@1.11.vendor \
@@ -190,6 +159,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor
 
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Filesystem
 PRODUCT_PACKAGES += \
     e2fsck_ramdisk \
@@ -202,10 +178,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
 
 # FM
 PRODUCT_PACKAGES += \
@@ -220,17 +192,23 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
-    android.hardware.gnss@2.1-service-qti \
+    android.hardware.gnss@2.1-service-qti
+
+PRODUCT_PACKAGES += \
     gnss@2.0-base.policy \
     gnss@2.0-xtra-daemon.policy \
     gnss@2.0-xtwifi-client.policy \
-    gnss@2.0-xtwifi-inet-agent.policy \
+    gnss@2.0-xtwifi-inet-agent.policy
+
+PRODUCT_PACKAGES += \
     flp.conf \
     gps.conf \
     izat.conf \
     lowi.conf \
     sap.conf \
-    xtwifi.conf \
+    xtwifi.conf
+
+PRODUCT_PACKAGES += \
     libbatching \
     libgeofencing \
     libgnss \
@@ -264,6 +242,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/usr/idc/,$(TARGET_COPY_OUT_SYSTEM)/usr/idc)
 
+# IFAA
+PRODUCT_PACKAGES += \
+    IFAAService
+
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.default:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.default \
@@ -283,10 +265,6 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/*.rc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/$(notdir $f)))
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
-
-# IFAA
-PRODUCT_PACKAGES += \
-    IFAAService
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -402,6 +380,25 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
+# Overlays
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
+PRODUCT_PACKAGES += \
+    GauguinApertureOverlay \
+    GauguinCarrierConfigOverlay \
+    GauguinRefreshRateOverlay \
+    GauguinFrameworksOverlay \
+    GauguinNfcOverlay \
+    GauguinSettingsOverlay \
+    GauguinSystemUIOverlay \
+    GauguinTelephonyOverlay \
+    GauguinWifiOverlay
+
+PRODUCT_PACKAGES += \
+    SettingsOverlayM2007J17C \
+    SettingsOverlayM2007J17G \
+    SettingsOverlayM2007J17I
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr \
@@ -410,14 +407,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# QMI
-PRODUCT_PACKAGES += \
-    libjson
-
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
+
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
 
 # QTI
 PRODUCT_PACKAGES += \
@@ -429,6 +426,17 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor
+
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 29
+
+# SOONG Namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/xiaomi \
+    vendor/qcom/opensource/usb/etc
 
 # Sensors
 PRODUCT_PACKAGES += \
