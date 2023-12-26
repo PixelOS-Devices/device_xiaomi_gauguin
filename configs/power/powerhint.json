@@ -385,13 +385,13 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBWMinFreq",
-      "Duration": 1000,
+      "Duration": 0,
       "Value": "9155"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "LLCCBWMinFreq",
-      "Duration": 1000,
+      "Duration": 0,
       "Value": "2597"
     },
     {
