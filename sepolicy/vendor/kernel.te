@@ -1,6 +1,0 @@
-userdebug_or_eng(`
-  # For diag over socket
-  allow kernel self:qipcrtr_socket create;
-')
-
-dontaudit kernel self:qipcrtr_socket create;
