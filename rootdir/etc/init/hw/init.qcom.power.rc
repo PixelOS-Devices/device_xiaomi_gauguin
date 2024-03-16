@@ -92,9 +92,6 @@ on property:vendor.setup.power=1
     # Turn off sleep modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
-    # Enable PowerHAL hint processing
-    setprop vendor.powerhal.init 1
-
     start dcvs-sh
 
 service dcvs-sh /vendor/bin/init.qti.dcvs.sh
