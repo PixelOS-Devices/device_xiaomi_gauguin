@@ -209,6 +209,9 @@ persist.vendor.sensors.odl.adsp=true
 ro.soc.manufacturer=QTI
 ro.soc.model=SM7225
 
+# System properties
+ro.product.property_source_order=odm,vendor,product,system_ext,system
+
 # WiFi
 wifi.aware.interface=wifi-aware0
 

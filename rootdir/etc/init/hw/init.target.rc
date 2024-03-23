@@ -233,12 +233,7 @@ on property:init.svc.vendor.per_mgr=running
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
-on boot && property:ro.boot.hwc=GLOBAL
-    enable qti_esepowermanager_service_1_1
-    enable secureelement-hal_1_2
-    enable vendor.nfc_hal_service
-
-on boot && property:ro.boot.hwc=CN
+on property:ro.boot.product.vendor.sku=nfc
     enable qti_esepowermanager_service_1_1
     enable secureelement-hal_1_2
     enable vendor.nfc_hal_service

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2021 The LineageOS Project
+# Copyright (C) 2021-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -92,16 +92,15 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MANIFEST_FILE := \
+    $(DEVICE_PATH)/configs/vintf/manifest.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest-no_nfc.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
-ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_nfc.xml
-ODM_MANIFEST_NO_NFC_FILES := $(DEVICE_PATH)/configs/vintf/manifest_no_nfc.xml
-ODM_MANIFEST_SKUS += nfc no_nfc
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_gauguin
-TARGET_RECOVERY_DEVICE_MODULES := libinit_gauguin
+DEVICE_MANIFEST_SKUS += nfc
+DEVICE_MANIFEST_NFC_FILES := \
+    $(DEVICE_PATH)/configs/vintf/manifest.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest-nfc.xml
 
 # Media
 TARGET_USES_ION := true
