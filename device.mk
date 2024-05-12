@@ -170,9 +170,6 @@ PRODUCT_PACKAGES += \
     memtrack.lito
 
 PRODUCT_PACKAGES += \
-    libvulkan
-
-PRODUCT_PACKAGES += \
     vendor.display.config@1.11.vendor \
     vendor.display.config@1.5 \
     vendor.display.config@2.0 \
