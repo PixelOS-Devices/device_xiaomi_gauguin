@@ -11,6 +11,8 @@
     <string-array name="config_ignoredAuxCameraIds">
         <item>4</item>
         <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 
     <!-- An array of triplets made of (camera ID, qualities, framerates).
