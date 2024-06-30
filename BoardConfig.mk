@@ -22,6 +22,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gauguin,gauguinpro,gauguininpro
 
+# Build
+TARGET_KERNEL_CLANG_VERSION := r487747c
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := gauguin
 TARGET_NO_BOOTLOADER := true
