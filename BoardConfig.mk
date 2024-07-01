@@ -79,7 +79,7 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/aosp/config/device_framework_matrix.xml
 
 DEVICE_MANIFEST_FILE := \
     $(DEVICE_PATH)/configs/vintf/manifest.xml \
@@ -98,7 +98,6 @@ TARGET_USES_ION := true
 BOARD_USES_METADATA_PARTITION := true
 
 # Partitions
--include vendor/lineage/config/BoardConfigReservedSize.mk
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
