@@ -22,9 +22,6 @@ $(call inherit-product, vendor/xiaomi/gauguin/gauguin-vendor.mk)
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
     GauguinApertureOverlay \
     GauguinCarrierConfigOverlay \
