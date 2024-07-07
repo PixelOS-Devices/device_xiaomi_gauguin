@@ -62,8 +62,7 @@ function blob_fixup() {
             sed -i "/seclabel u:r:batterysecret:s0/d" "${2}"
             ;;
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
-            hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/21008052E7090094/210080521F2003D5/g" | xxd -r -p > "${EXTRACT_TMP_DIR}/${1##*/}"
-            mv "${EXTRACT_TMP_DIR}/${1##*/}" "${2}"
+            "${SIGSCAN}" -p "E7 09 00 94" -P "1F 20 03 D5" -f "${2}"
             ;;
         vendor/lib64/camera/components/com.mi.node.watermark.so)
             "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
