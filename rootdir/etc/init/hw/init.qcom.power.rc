@@ -81,13 +81,61 @@ on property:vendor.setup.power=1
     write /sys/devices/platform/soc/soc:qcom,npu-npu-llcc-bw/devfreq/soc:qcom,npu-npu-llcc-bw/bw_hwmon/up_scale 250
     write /sys/devices/virtual/npu/msm_npu/pwr 0
 
+    # Disable unfiltering
+    write /proc/sys/kernel/sched_task_unfilter_period 20000000
+
+    # Setting b.L scheduler parameters
+    # default sched up and down migrate values are 95 and 85
+    write /proc/sys/kernel/sched_downmigrate 65
+    write /proc/sys/kernel/sched_upmigrate 71
+
+    # default sched up and down migrate values are 100 and 95
+    write /proc/sys/kernel/sched_group_downmigrate 85
+    write /proc/sys/kernel/sched_group_upmigrate 100
+    write /proc/sys/kernel/sched_walt_rotate_big_tasks 1
+    write /proc/sys/kernel/sched_coloc_busy_hyst_ns 0
+    write /proc/sys/kernel/sched_coloc_busy_hysteresis_enable_cpus 0
+    write /proc/sys/kernel/sched_coloc_busy_hyst_max_ms 0
+
+    # Configure governor settings for big.LITTLE cluster
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/hispeed_freq 1248000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 576000
+    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq 1248000
+    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq 652800
+
+    # colocation v3 settings
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/rtg_boost_freq 740000
+    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/rtg_boost_freq 0
+    write /proc/sys/kernel/sched_min_task_util_for_boost 51
+
     # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
     write /sys/devices/system/cpu/cpu6/sched_load_boost -6
     write /sys/devices/system/cpu/cpu7/sched_load_boost -6
+    write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load 85
+
+    # Enable conservative pl
+    write /proc/sys/kernel/sched_conservative_pl 1
+
+    # Set allocstall_threshold to 0 for all targets.
+    # Set swappiness to 100 for all targets
+    write /sys/module/vmpressure/parameters/allocstall_threshold 0
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 100
+
+    write /sys/block/zram0/comp_algorithm lz4
 
     # Disable wsf for all targets beacause we are using efk.
     # wsf Range : 1..1000 So set to bare minimum value 1.
     write /proc/sys/vm/watermark_scale_factor 1
+
+    # cpuset parameters
+    write /dev/cpuset/background/cpus 0-5
+    write /dev/cpuset/system-background/cpus 0-5
+
+    # Turn off scheduler boost at the end
+    write /proc/sys/kernel/sched_boost 0
 
     # Turn off sleep modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
