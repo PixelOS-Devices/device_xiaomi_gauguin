@@ -7,14 +7,3 @@ allow hal_sensors_default ultrasound_device:chr_file rw_file_perms;
 
 # Access to persist.sensor. properties
 get_prop(hal_sensors_default, persist_sensors_prop)
-
-# Access to IIO devices
-allow hal_sensors_default iio_device:chr_file rw_file_perms;
-
-# Access to ADSP properties
-get_prop(hal_sensors_default, vendor_adsprpc_prop)
-
-# For QCOM diag port access
-userdebug_or_eng(`
-  allow hal_sensors_default vendor_diag_device:chr_file rw_file_perms;
-')

@@ -1,3 +1,0 @@
-userdebug_or_eng(`
-  allow vendor_hal_imsrtp vendor_diag_device:chr_file rw_file_perms;
-')
