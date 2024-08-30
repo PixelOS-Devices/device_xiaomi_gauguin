@@ -99,8 +99,6 @@ on late-fs
 on early-boot
     start vendor.sensors
 
-    setprop vendor.media.target.version 3
-
 on boot
     chmod 0666 /dev/input/event2
 

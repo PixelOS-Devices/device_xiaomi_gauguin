@@ -252,13 +252,6 @@ on property:persist.vendor.radio.atfwd.start=false
 on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
-on property:vendor.media.target.version=*
-    setprop vendor.sys.media.target.version ${vendor.media.target.version}
-
-on property:vendor.media.target_variant=*
-    setprop ro.media.xml_variant.codecs ${vendor.media.target_variant}
-    setprop ro.media.xml_variant.codecs_performance ${vendor.media.target_variant}
-
 on property:sys.shutdown.requested=*
     write /sys/kernel/shutdown_wlan/shutdown 1
     stop cnss-daemon
