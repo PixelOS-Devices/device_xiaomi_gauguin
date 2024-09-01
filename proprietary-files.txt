@@ -492,6 +492,8 @@ vendor/lib64/libsdmextension.so|f2ab90d1880fd30a6673110ad9f36cf93aebd5b9
 vendor/lib64/libtinyxml2_1.so|fb0a2b16e5cfd28515268edc5c2345190d1ef4e5
 
 # Display Calibration
+vendor/etc/ltm_config_xiaomi_36_02_0a_video_mode_dsc_dsi_panel.xml
+vendor/etc/ltm_config_xiaomi_42_02_0b_video_mode_dsc_dsi_panel.xml
 vendor/etc/qdcm_calib_data_xiaomi_36_02_0a_video_mode_dsc_dsi_panel.xml
 vendor/etc/qdcm_calib_data_xiaomi_42_02_0b_video_mode_dsc_dsi_panel.xml
 
