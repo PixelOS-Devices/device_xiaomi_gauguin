@@ -70,6 +70,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('megviifacepp_0_5_2_model', 'facedetectpp_0_5_2_model'),
     'vendor/lib64/libwvhidl.so': blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
+        .add_line_if_missing('gettid: 1'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
