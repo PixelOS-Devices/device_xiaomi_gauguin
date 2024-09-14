@@ -75,18 +75,9 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.lito
 
 PRODUCT_PACKAGES += \
-    liba2dpoffload \
-    libbatterylistener \
-    libcomprcapture \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsndmonitor \
-    libspkrprot \
-    libtinycompress \
     libvolumelistener
 
 PRODUCT_PACKAGES += \
