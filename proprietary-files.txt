@@ -1161,3 +1161,9 @@ vendor/lib64/libwvhidl.so
 
 # WiFi
 vendor/bin/cnss-daemon
+
+# WiFi Display
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfddisplayconfig_proprietary.so
+vendor/lib/libwfdmmservice_proprietary.so
+vendor/lib/libwfdutils_proprietary.so
