@@ -96,14 +96,18 @@ vendor.display.disable_excl_rect=0
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.disable_scaler=0
-vendor.display.enable_async_powermode=0
+vendor.display.enable_async_powermode=1
 vendor.display.enable_hdr10_gpu_target=1
 vendor.display.enable_perf_hint_large_comp_cycle=1
 vendor.display.enable_posted_start_dyn=1
 vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
-vendor.display.use_smooth_motion=0
+vendor.display.use_smooth_motion=1
+vendor.display.enable_camera_smooth=1
+vendor.display.enable_allow_idle_fallback=1
+vendor.display.disable_idle_time_video=1
+vendor.display.disable_idle_time_hdr=1
 
 # Display (Phase Offsets)
 debug.sf.enable_advanced_sf_phase_offset=1
