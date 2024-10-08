@@ -68,3 +68,8 @@ void setTorchStrengthLevelExt(int32_t torchStrength) {
     if (torchStrength > 0)
         set(TOGGLE_SWITCH, 1);
 }
+
+void setTorchModeExt(bool enabled) {
+    int32_t strength = getTorchDefaultStrengthLevelExt();
+    setTorchStrengthLevelExt(enabled ? strength : 0);
+}
