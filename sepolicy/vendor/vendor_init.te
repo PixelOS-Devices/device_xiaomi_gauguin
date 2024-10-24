@@ -1,4 +1,5 @@
 set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_fingerprint_prop)
 
 allow vendor_init {
   proc_dirty
