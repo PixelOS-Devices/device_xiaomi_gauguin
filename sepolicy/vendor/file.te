@@ -8,6 +8,8 @@ type vendor_audio_socket, file_type;
 
 type vendor_persist_camera_file, vendor_persist_type, file_type;
 
+type vendor_persist_fingerprint_file, vendor_persist_type, file_type;
+
 type vendor_persist_subsys_file, vendor_persist_type, file_type;
 
 type vendor_thermal_data_file, file_type, data_file_type;
