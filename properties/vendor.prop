@@ -136,6 +136,7 @@ ro.surface_flinger.wcg_composition_dataspace=143261696
 
 # DPM
 persist.vendor.dpm.feature=1
+persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
@@ -169,6 +170,16 @@ ro.opengles.version=196610
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 vendor.gralloc.disable_ubwc=0
+
+# HVDCP
+persist.vendor.cp.support_qc3p5=1
+persist.vendor.cp.ilim_offset_ua=400000
+persist.vendor.cp.ilim_offset_pct=100
+persist.vendor.cp.qc3_step_offset_ua=600000
+#persist.vendor.cp.taper_term_mv=5000
+persist.vendor.cp.min_therm_iadp_limit_ua=1000000
+persist.vendor.qg.cld_coff_gain=7
+persist.vendor.qg.coff_cold_ibat_ma=250
 
 # Incremental FS
 ro.incremental.enable=true
@@ -207,6 +218,8 @@ persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.force_ltd_sys_ind=1
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.mbn_load_flag=7
+persist.vendor.radio.mbn_wait_s=60
 persist.vendor.radio.mbn_trace=true
 persist.vendor.radio.moniter_call=true
 persist.vendor.radio.moniter_dds=true
